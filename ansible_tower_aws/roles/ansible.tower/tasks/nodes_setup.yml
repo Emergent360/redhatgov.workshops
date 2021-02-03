@@ -28,7 +28,7 @@
   - name: Enable Ansible repo
     rhsm_repository:
       name: "{{ ansible_repo }}"
-    when: not beta|bool
+    when: not beta|default(False)
 
   - name: Install base packages
     become: yes
@@ -58,6 +58,7 @@
     dest: "/home/{{ system_user }}/{{ item.dest }}"
     owner: "{{ system_user }}"
     group: "{{ system_user }}"
+    mode: 0644
   with_items:
     - { src: "vimrc", dest: ".vimrc" }
 
