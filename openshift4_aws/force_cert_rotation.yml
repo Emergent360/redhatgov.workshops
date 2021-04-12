@@ -4,7 +4,7 @@
   become: no
   gather_facts: false
   environment:
-    KUBECONFIG: /home/{{ user }}/{{ cluster_name }}/auth/kubeconfig
+    KUBECONFIG: /home/ec2-user/redhatgov.workshops/openshift4_aws/build/auth/kubeconfig
   tasks:
   - name: Get Config Map Definition
     shell: oc get configmap extension-apiserver-authentication -n kube-system -o yaml >/tmp/extension-apiserver-authentication.yaml
