@@ -43,7 +43,7 @@ deploy_ansible_automation:		False
 deploy_ansible_automation_workshop:     False
 
 # deploy codeready workspaces
-deploy_codeready_workspaces:            True
+deploy_codeready_workspaces:            False
 
 # service mesh operator variables
 deploy_service_mesh:                    false
